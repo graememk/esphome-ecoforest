@@ -533,7 +533,7 @@ sensor:
     id: COP_x10 
     register_type: holding
     address: 136
-    unit_of_measurement: ""
+    unit_of_measurement: " "
     value_type: U_WORD
     filters:
       multiply: 0.1
@@ -1130,7 +1130,7 @@ sensor:
  
   - platform: modbus_controller
     modbus_controller_id: ecoModbus
-    name: "Monthly Cooling Energy Production "
+    name: "January Cooling Energy Production "
     id: Qe_Jan 
     register_type: holding
     address: 5221
@@ -1142,7 +1142,7 @@ sensor:
  
   - platform: modbus_controller
     modbus_controller_id: ecoModbus
-    name: "Monthly Cooling Energy Production"
+    name: "Feburary Cooling Energy Production"
     id: Qe_Feb 
     register_type: holding
     address: 5222
@@ -1154,7 +1154,7 @@ sensor:
  
   - platform: modbus_controller
     modbus_controller_id: ecoModbus
-    name: "Monthly Cooling Energy Production "
+    name: "March Cooling Energy Production "
     id: Qe_Mar 
     register_type: holding
     address: 5223
@@ -1166,7 +1166,7 @@ sensor:
  
   - platform: modbus_controller
     modbus_controller_id: ecoModbus
-    name: "Monthly Cooling Energy Production "
+    name: "April Cooling Energy Production "
     id: Qe_Apr 
     register_type: holding
     address: 5224
@@ -1178,7 +1178,7 @@ sensor:
  
   - platform: modbus_controller
     modbus_controller_id: ecoModbus
-    name: "Monthly Cooling Energy Production "
+    name: "May Cooling Energy Production "
     id: Qe_May 
     register_type: holding
     address: 5225
@@ -1190,7 +1190,7 @@ sensor:
  
   - platform: modbus_controller
     modbus_controller_id: ecoModbus
-    name: "Monthly Cooling Energy Production "
+    name: "June Cooling Energy Production "
     id: Qe_Jun 
     register_type: holding
     address: 5226
@@ -1202,7 +1202,7 @@ sensor:
  
   - platform: modbus_controller
     modbus_controller_id: ecoModbus
-    name: "Monthly Cooling Energy Production "
+    name: "July Cooling Energy Production "
     id: Qe_Jul 
     register_type: holding
     address: 5227
@@ -1214,7 +1214,7 @@ sensor:
  
   - platform: modbus_controller
     modbus_controller_id: ecoModbus
-    name: "Monthly Cooling Energy Production "
+    name: "August Cooling Energy Production "
     id: Qe_Aug 
     register_type: holding
     address: 5228
@@ -1226,7 +1226,7 @@ sensor:
  
   - platform: modbus_controller
     modbus_controller_id: ecoModbus
-    name: "Monthly Cooling Energy Production "
+    name: "September Cooling Energy Production "
     id: Qe_Sep 
     register_type: holding
     address: 5229
@@ -1238,7 +1238,7 @@ sensor:
  
   - platform: modbus_controller
     modbus_controller_id: ecoModbus
-    name: "Monthly Cooling Energy Production "
+    name: "October Cooling Energy Production "
     id: Qe_Oct 
     register_type: holding
     address: 5230
@@ -1250,7 +1250,7 @@ sensor:
  
   - platform: modbus_controller
     modbus_controller_id: ecoModbus
-    name: "Monthly Cooling Energy Production "
+    name: "November Cooling Energy Production "
     id: Qe_Nov 
     register_type: holding
     address: 5231
@@ -1262,7 +1262,7 @@ sensor:
  
   - platform: modbus_controller
     modbus_controller_id: ecoModbus
-    name: "Monthly Cooling Energy Production "
+    name: "December Cooling Energy Production "
     id: Qe_Dec 
     register_type: holding
     address: 5232
@@ -1274,7 +1274,7 @@ sensor:
  
   - platform: modbus_controller
     modbus_controller_id: ecoModbus
-    name: "Monthly Heating Energy production "
+    name: "January Heating Energy production "
     id: Qc_Jan 
     register_type: holding
     address: 5233
@@ -1286,7 +1286,7 @@ sensor:
  
   - platform: modbus_controller
     modbus_controller_id: ecoModbus
-    name: "Monthly Heating Energy production "
+    name: "Feburary Heating Energy production "
     id: Qc_Feb 
     register_type: holding
     address: 5234
@@ -1298,7 +1298,7 @@ sensor:
  
   - platform: modbus_controller
     modbus_controller_id: ecoModbus
-    name: "Monthly Heating Energy production "
+    name: "March Heating Energy production "
     id: Qc_Mar 
     register_type: holding
     address: 5235
@@ -1310,7 +1310,7 @@ sensor:
  
   - platform: modbus_controller
     modbus_controller_id: ecoModbus
-    name: "Monthly Heating Energy production "
+    name: "April Heating Energy production "
     id: Qc_Apr 
     register_type: holding
     address: 5236
@@ -1322,7 +1322,7 @@ sensor:
  
   - platform: modbus_controller
     modbus_controller_id: ecoModbus
-    name: "Monthly Heating Energy production "
+    name: "May Heating Energy production "
     id: Qc_May 
     register_type: holding
     address: 5237
@@ -1334,7 +1334,7 @@ sensor:
  
   - platform: modbus_controller
     modbus_controller_id: ecoModbus
-    name: "Monthly Heating Energy production "
+    name: "June Heating Energy production "
     id: Qc_Jun 
     register_type: holding
     address: 5238
@@ -1346,7 +1346,7 @@ sensor:
  
   - platform: modbus_controller
     modbus_controller_id: ecoModbus
-    name: "Monthly Heating Energy production "
+    name: "July Heating Energy production "
     id: Qc_Jul 
     register_type: holding
     address: 5239
@@ -1358,7 +1358,7 @@ sensor:
  
   - platform: modbus_controller
     modbus_controller_id: ecoModbus
-    name: "Monthly Heating Energy production "
+    name: "August Heating Energy production "
     id: Qc_Aug 
     register_type: holding
     address: 5240
@@ -1370,7 +1370,7 @@ sensor:
  
   - platform: modbus_controller
     modbus_controller_id: ecoModbus
-    name: "Monthly Heating Energy production "
+    name: "September Heating Energy production "
     id: Qc_Sep 
     register_type: holding
     address: 5241
@@ -1382,7 +1382,7 @@ sensor:
  
   - platform: modbus_controller
     modbus_controller_id: ecoModbus
-    name: "Monthly Heating Energy production "
+    name: "October Heating Energy production "
     id: Qc_Oct 
     register_type: holding
     address: 5242
@@ -1394,7 +1394,7 @@ sensor:
  
   - platform: modbus_controller
     modbus_controller_id: ecoModbus
-    name: "Monthly Heating Energy production "
+    name: "Novemeber Heating Energy production "
     id: Qc_Nov 
     register_type: holding
     address: 5243
@@ -1406,7 +1406,7 @@ sensor:
  
   - platform: modbus_controller
     modbus_controller_id: ecoModbus
-    name: "Monthly Heating Energy production "
+    name: "December Heating Energy production "
     id: Qc_Dec 
     register_type: holding
     address: 5244
@@ -1418,7 +1418,7 @@ sensor:
  
   - platform: modbus_controller
     modbus_controller_id: ecoModbus
-    name: "Monthly Electric energy consumption "
+    name: "January Electric energy consumption "
     id: We_Jan 
     register_type: holding
     address: 5245
@@ -1430,7 +1430,7 @@ sensor:
  
   - platform: modbus_controller
     modbus_controller_id: ecoModbus
-    name: "Monthly Electric energy consumption "
+    name: "Feburary Electric energy consumption "
     id: We_Feb 
     register_type: holding
     address: 5246
@@ -1442,7 +1442,7 @@ sensor:
  
   - platform: modbus_controller
     modbus_controller_id: ecoModbus
-    name: "Monthly Electric energy consumption "
+    name: "March Electric energy consumption "
     id: We_Mar 
     register_type: holding
     address: 5247
@@ -1454,7 +1454,7 @@ sensor:
  
   - platform: modbus_controller
     modbus_controller_id: ecoModbus
-    name: "Monthly Electric energy consumption "
+    name: "April Electric energy consumption "
     id: We_Apr 
     register_type: holding
     address: 5248
@@ -1466,7 +1466,7 @@ sensor:
  
   - platform: modbus_controller
     modbus_controller_id: ecoModbus
-    name: "Monthly Electric energy consumption "
+    name: "May Electric energy consumption "
     id: We_May 
     register_type: holding
     address: 5249
@@ -1478,7 +1478,7 @@ sensor:
  
   - platform: modbus_controller
     modbus_controller_id: ecoModbus
-    name: "Monthly Electric energy consumption "
+    name: "June Electric energy consumption "
     id: We_Jun 
     register_type: holding
     address: 5250
@@ -1490,7 +1490,7 @@ sensor:
  
   - platform: modbus_controller
     modbus_controller_id: ecoModbus
-    name: "Monthly Electric energy consumption "
+    name: "July Electric energy consumption "
     id: We_Jul 
     register_type: holding
     address: 5251
@@ -1502,7 +1502,7 @@ sensor:
  
   - platform: modbus_controller
     modbus_controller_id: ecoModbus
-    name: "Monthly Electric energy consumption "
+    name: "August Electric energy consumption "
     id: We_Aug 
     register_type: holding
     address: 5252
@@ -1514,7 +1514,7 @@ sensor:
  
   - platform: modbus_controller
     modbus_controller_id: ecoModbus
-    name: "Monthly Electric energy consumption "
+    name: "September Electric energy consumption "
     id: We_Sep 
     register_type: holding
     address: 5253
@@ -1526,7 +1526,7 @@ sensor:
  
   - platform: modbus_controller
     modbus_controller_id: ecoModbus
-    name: "Monthly Electric energy consumption "
+    name: "October Electric energy consumption "
     id: We_Oct 
     register_type: holding
     address: 5254
@@ -1538,7 +1538,7 @@ sensor:
  
   - platform: modbus_controller
     modbus_controller_id: ecoModbus
-    name: "Monthly Electric energy consumption "
+    name: "Novemeber Electric energy consumption "
     id: We_Nov 
     register_type: holding
     address: 5255
@@ -1550,7 +1550,7 @@ sensor:
  
   - platform: modbus_controller
     modbus_controller_id: ecoModbus
-    name: "Monthly Electric energy consumption "
+    name: "December Electric energy consumption "
     id: We_Dec 
     register_type: holding
     address: 5256
