@@ -1,0 +1,1805 @@
+esphome:
+  name: ESPHome-ecoair
+  friendly_name: ESPHome EcoAir
+
+esp32:
+  #board: esp32-c3-devkitm-1
+  board: az-delivery-devkit-v4
+  framework:
+    type: arduino
+
+# Enable logging
+logger:
+  #baud_rate: 0
+
+# Enable Home Assistant API
+api:
+
+ota:
+ 
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+
+
+uart:
+  id: mod_bus
+  tx_pin: 17
+  rx_pin: 16
+  baud_rate: 19200
+  stop_bits: 2
+  parity: NONE
+  
+
+modbus:
+  flow_control_pin: 5
+  id: modbus1
+  
+
+modbus_controller:
+  - id: ecoModbus
+    ## the Modbus device addr
+    address: 0x1
+    modbus_id: modbus1
+    setup_priority: -10
+    update_interval: 15s
+    command_throttle: 100ms
+
+sensor:
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Outlet Temperature Indoor Unit "
+    id: TIC2 
+    register_type: holding
+    address: 1
+    unit_of_measurement: "ºC"
+    value_type: U_WORD
+    filters:
+      multiply: 0.1
+    accuracy_decimals: 1
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Inlet Temperature Indoor Unit "
+    id: TRC2 
+    register_type: holding
+    address: 2
+    unit_of_measurement: "ºC"
+    value_type: U_WORD
+    filters:
+      multiply: 0.1
+    accuracy_decimals: 1
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Compressor suction intermediate temperature "
+    id: PAIC 
+    register_type: holding
+    address: 3
+    unit_of_measurement: "bar"
+    value_type: U_WORD
+    filters:
+      multiply: 0.1
+    accuracy_decimals: 1
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Outlet Temperature Outdoor Unit "
+    id: TIC 
+    register_type: holding
+    address: 4
+    unit_of_measurement: "ºC"
+    value_type: U_WORD
+    filters:
+      multiply: 0.1
+    accuracy_decimals: 1
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Inlet Temperature Outdoor Unit "
+    id: TRC 
+    register_type: holding
+    address: 5
+    unit_of_measurement: "ºC"
+    value_type: U_WORD
+    filters:
+      multiply: 0.1
+    accuracy_decimals: 1
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Heating circuit pressure "
+    id: PCC 
+    register_type: holding
+    address: 6
+    unit_of_measurement: "bar"
+    value_type: U_WORD
+    filters:
+      multiply: 0.1
+    accuracy_decimals: 1
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Compressor suction pressure "
+    id: PAC 
+    register_type: holding
+    address: 7
+    unit_of_measurement: "bar"
+    value_type: U_WORD
+    filters:
+      multiply: 0.1
+    accuracy_decimals: 1
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Compressor suction temperature "
+    id: TAC 
+    register_type: holding
+    address: 8
+    unit_of_measurement: "ºC"
+    value_type: U_WORD
+    filters:
+      multiply: 0.1
+    accuracy_decimals: 1
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Compressor discharge pressure "
+    id: PDC 
+    register_type: holding
+    address: 9
+    unit_of_measurement: "bar"
+    value_type: U_WORD
+    filters:
+      multiply: 0.1
+    accuracy_decimals: 1
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Compressor discharge temperature "
+    id: TDC 
+    register_type: holding
+    address: 10
+    unit_of_measurement: "ºC"
+    value_type: U_WORD
+    filters:
+      multiply: 0.1
+    accuracy_decimals: 1
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "DHW temperature "
+    id: TACS 
+    register_type: holding
+    address: 11
+    unit_of_measurement: "ºC"
+    value_type: U_WORD
+    filters:
+      multiply: 0.1
+    accuracy_decimals: 1
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "DHW Inlet temperature "
+    id: TRACS 
+    register_type: holding
+    address: 12
+    unit_of_measurement: "ºC"
+    value_type: U_WORD
+    filters:
+      multiply: 0.1
+    accuracy_decimals: 1
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Supply temperature SG2 "
+    id: TSG2 
+    register_type: holding
+    address: 13
+    unit_of_measurement: "ºC"
+    value_type: U_WORD
+    filters:
+      multiply: 0.1
+    accuracy_decimals: 1
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Supply temperature SG3 / Boiler "
+    id: TSG3_TCALD
+    register_type: holding
+    address: 14
+    unit_of_measurement: "ºC"
+    value_type: U_WORD
+    filters:
+      multiply: 0.1
+    accuracy_decimals: 1
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Heating buffer tank temperature "
+    id: TINC 
+    register_type: holding
+    address: 17
+    unit_of_measurement: "ºC"
+    value_type: U_WORD
+    filters:
+      multiply: 0.1
+    accuracy_decimals: 1
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Cooling buffer tank temperature "
+    id: TINR 
+    register_type: holding
+    address: 18
+    unit_of_measurement: "ºC"
+    value_type: U_WORD
+    filters:
+      multiply: 0.1
+    accuracy_decimals: 1
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Pool temperature "
+    id: TRPSC 
+    register_type: holding
+    address: 19
+    unit_of_measurement: "ºC"
+    value_type: U_WORD
+    filters:
+      multiply: 0.1
+    accuracy_decimals: 1
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Outside temperature "
+    id: TE 
+    register_type: holding
+    address: 20
+    unit_of_measurement: "ºC"
+    value_type: U_WORD
+    filters:
+      multiply: 0.1
+    accuracy_decimals: 1
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Supply temperature SG1 "
+    id: TSG1 
+    register_type: holding
+    address: 21
+    unit_of_measurement: "ºC"
+    value_type: U_WORD
+    filters:
+      multiply: 0.1
+    accuracy_decimals: 1
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Heating buffer tank setpoint "
+    id: HeatBufferTank_SetP 
+    register_type: holding
+    address: 23
+    unit_of_measurement: "ºC"
+    value_type: U_WORD
+    filters:
+      multiply: 0.1
+    accuracy_decimals: 1
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Cooling buffer tank setpoint "
+    id: CoolBufferTank_SetP 
+    register_type: holding
+    address: 24
+    unit_of_measurement: "ºC"
+    value_type: U_WORD
+    filters:
+      multiply: 0.1
+    accuracy_decimals: 1
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Condensation temperature "
+    id: CondTemp 
+    register_type: holding
+    address: 25
+    unit_of_measurement: "ºC"
+    value_type: U_WORD
+    filters:
+      multiply: 0.1
+    accuracy_decimals: 1
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Superheat "
+    id: SuperHeat 
+    register_type: holding
+    address: 26
+    unit_of_measurement: "ºC"
+    value_type: U_WORD
+    filters:
+      multiply: 0.1
+    accuracy_decimals: 1
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Evaporation temperature "
+    id: EvaporationTemp 
+    register_type: holding
+    address: 27
+    unit_of_measurement: "ºC"
+    value_type: U_WORD
+    filters:
+      multiply: 0.1
+    accuracy_decimals: 1
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Expansion valve open "
+    id: SHValvePos_Percent 
+    register_type: holding
+    address: 28
+    unit_of_measurement: "%"
+    value_type: U_WORD
+    filters:
+      multiply: 0.1
+    accuracy_decimals: 1
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Distribution pump Regulation "
+    id: PmpRegPercentScreen 
+    register_type: holding
+    address: 29
+    unit_of_measurement: "%"
+    value_type: U_WORD
+    filters:
+      multiply: 0.1
+    accuracy_decimals: 1
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Fan Regulation "
+    id: FanRegPercentScreen 
+    register_type: holding
+    address: 30
+    unit_of_measurement: "%"
+    value_type: U_WORD
+    filters:
+      multiply: 0.1
+    accuracy_decimals: 1
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Shunt group SG2 Regulation "
+    id: GroupRegSG2 
+    register_type: holding
+    address: 31
+    unit_of_measurement: "%"
+    value_type: U_WORD
+    filters:
+      multiply: 0.1
+    accuracy_decimals: 1
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Shunt group SG3 Regulation/ Boiler "
+    id: SG3BoilerRegAout 
+    register_type: holding
+    address: 32
+    unit_of_measurement: "%"
+    value_type: U_WORD
+    filters:
+      multiply: 0.1
+    accuracy_decimals: 1
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Shunt group DG1 Regulation "
+    id: GroupRegSG1 
+    register_type: holding
+    address: 33
+    unit_of_measurement: "%"
+    value_type: U_WORD
+    filters:
+      multiply: 0.1
+    accuracy_decimals: 1
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "DHW setpoint "
+    id: DHW_CurrSetP 
+    register_type: holding
+    address: 38
+    unit_of_measurement: "ºC"
+    value_type: U_WORD
+    filters:
+      multiply: 0.1
+    accuracy_decimals: 1
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Heating SG1 Setpoint "
+    id: HeatOutTemp_SG1 
+    register_type: holding
+    address: 123
+    unit_of_measurement: "ºC"
+    value_type: U_WORD
+    filters:
+      multiply: 0.1
+    accuracy_decimals: 1
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Heating SG2 Setpoint "
+    id: HeatOutTemp_SG2 
+    register_type: holding
+    address: 124
+    unit_of_measurement: "ºC"
+    value_type: U_WORD
+    filters:
+      multiply: 0.1
+    accuracy_decimals: 1
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Heating SG3 Setpoint "
+    id: HeatOutTemp_SG3 
+    register_type: holding
+    address: 125
+    unit_of_measurement: "ºC"
+    value_type: U_WORD
+    filters:
+      multiply: 0.1
+    accuracy_decimals: 1
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Cooling DG1 Setpoint "
+    id: CoolOutTemp_SG1 
+    register_type: holding
+    address: 128
+    unit_of_measurement: "ºC"
+    value_type: U_WORD
+    filters:
+      multiply: 0.1
+    accuracy_decimals: 1
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Cooling SG2 Setpoint "
+    id: CoolOutTemp_SG2 
+    register_type: holding
+    address: 129
+    unit_of_measurement: "ºC"
+    value_type: U_WORD
+    filters:
+      multiply: 0.1
+    accuracy_decimals: 1
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Cooling SG3 Setpoint "
+    id: CoolOutTemp_SG3 
+    register_type: holding
+    address: 130
+    unit_of_measurement: "ºC"
+    value_type: U_WORD
+    filters:
+      multiply: 0.1
+    accuracy_decimals: 1
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Instantaneous Heating Power "
+    id: Qcond_inst 
+    register_type: holding
+    address: 133
+    unit_of_measurement: "kW"
+    value_type: U_WORD
+    filters:
+      multiply: 0.1
+    accuracy_decimals: 1
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Instantaneous Cooling Power "
+    id: Qevap_inst 
+    register_type: holding
+    address: 134
+    unit_of_measurement: "kW"
+    value_type: U_WORD
+    filters:
+      multiply: 0.1
+    accuracy_decimals: 1
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Instantaneous Electric Power "
+    id: Welec_calc_inst 
+    register_type: holding
+    address: 135
+    unit_of_measurement: "kW"
+    value_type: U_WORD
+    filters:
+      multiply: 0.1
+    accuracy_decimals: 1
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Instantaneous Heating Performance "
+    id: COP_x10 
+    register_type: holding
+    address: 136
+    unit_of_measurement: ""
+    value_type: U_WORD
+    filters:
+      multiply: 0.1
+    accuracy_decimals: 1
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Instantaneous Cooling Performance "
+    id: EER_x10 
+    register_type: holding
+    address: 137
+    unit_of_measurement: ""
+    value_type: U_WORD
+    filters:
+      multiply: 0.1
+    accuracy_decimals: 1
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Pool Setpoint "
+    id: PoolCurrSetP 
+    register_type: holding
+    address: 142
+    unit_of_measurement: "ºC"
+    value_type: U_WORD
+    filters:
+      multiply: 0.1
+    accuracy_decimals: 1
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "BUS Thermostat Setpoint SG1 "
+    id: TstatSetP_Z1_MB 
+    register_type: holding
+    address: 151
+    unit_of_measurement: "ºC"
+    value_type: U_WORD
+    filters:
+      multiply: 0.1
+    accuracy_decimals: 1
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "BUS Thermostat Setpoint SG2 "
+    id: TstatSetP_Z2_MB 
+    register_type: holding
+    address: 152
+    unit_of_measurement: "ºC"
+    value_type: U_WORD
+    filters:
+      multiply: 0.1
+    accuracy_decimals: 1
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "BUS Thermostat Setpoint SG3 "
+    id: TstatSetP_Z3_MB 
+    register_type: holding
+    address: 153
+    unit_of_measurement: "ºC"
+    value_type: U_WORD
+    filters:
+      multiply: 0.1
+    accuracy_decimals: 1
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Temperature measured in Terminal 1, only if there is TH-Tune or THT"
+    id: RoomTemp_SG1 
+    register_type: holding
+    address: 161
+    unit_of_measurement: "ºC"
+    value_type: U_WORD
+    filters:
+      multiply: 0.1
+    accuracy_decimals: 1
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Temperature measured in Terminal 2, only if there is TH-Tune or THT"
+    id: RoomTemp_SG2 
+    register_type: holding
+    address: 162
+    unit_of_measurement: "ºC"
+    value_type: U_WORD
+    filters:
+      multiply: 0.1
+    accuracy_decimals: 1
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Temperature measured in Terminal 3, only if there is TH-Tune or THT"
+    id: RoomTemp_SG3 
+    register_type: holding
+    address: 163
+    unit_of_measurement: "ºC"
+    value_type: U_WORD
+    filters:
+      multiply: 0.1
+    accuracy_decimals: 1
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "BUS DHW Setpoint "
+    id: DHW_BusSetP 
+    register_type: holding
+    address: 168
+    unit_of_measurement: "ºC"
+    value_type: U_WORD
+    filters:
+      multiply: 0.1
+    accuracy_decimals: 1
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "BUS Pool Setpoint "
+    id: PoolBusSetP 
+    register_type: holding
+    address: 169
+    unit_of_measurement: "ºC"
+    value_type: U_WORD
+    filters:
+      multiply: 0.1
+    accuracy_decimals: 1
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "BUS Heating SG1 Setpoint "
+    id: BusHeatDemandSetP_SG1 
+    register_type: holding
+    address: 170
+    unit_of_measurement: "ºC"
+    value_type: U_WORD
+    filters:
+      multiply: 0.1
+    accuracy_decimals: 1
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "BUS Heating SG2 Setpoint "
+    id: BusHeatDemandSetP_SG2 
+    register_type: holding
+    address: 171
+    unit_of_measurement: "ºC"
+    value_type: U_WORD
+    filters:
+      multiply: 0.1
+    accuracy_decimals: 1
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "BUS Heating SG3 Setpoint "
+    id: BusHeatDemandSetP_SG3 
+    register_type: holding
+    address: 172
+    unit_of_measurement: "ºC"
+    value_type: U_WORD
+    filters:
+      multiply: 0.1
+    accuracy_decimals: 1
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "BUS Cooling DG1 Setpoint "
+    id: BusCoolDemandSetP_SG1 
+    register_type: holding
+    address: 175
+    unit_of_measurement: "ºC"
+    value_type: U_WORD
+    filters:
+      multiply: 0.1
+    accuracy_decimals: 1
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "BUS Cooling SG2 Setpoint "
+    id: BusCoolDemandSetP_SG2 
+    register_type: holding
+    address: 176
+    unit_of_measurement: "ºC"
+    value_type: U_WORD
+    filters:
+      multiply: 0.1
+    accuracy_decimals: 1
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "BUS Cooling SG· Setpoint "
+    id: BusCoolDemandSetP_SG3 
+    register_type: holding
+    address: 177
+    unit_of_measurement: "ºC"
+    value_type: U_WORD
+    filters:
+      multiply: 0.1
+    accuracy_decimals: 1
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Circulator Pump Indoor Unit Regulation "
+    id: Pmp2ndRegPercentScreen
+    register_type: holding
+    address: 182
+    unit_of_measurement: "%"
+    value_type: U_WORD
+    filters:
+      multiply: 0.1
+    accuracy_decimals: 1
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Outlet DT Outdoor Unit Regulation "
+    id: Salto_Clima 
+    register_type: holding
+    address: 197
+    unit_of_measurement: "ºC"
+    value_type: U_WORD
+    filters:
+      multiply: 0.1
+    accuracy_decimals: 1
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Outlet DT Indoor Unit Regulation "
+    id: Salto_Clima_2nd 
+    register_type: holding
+    address: 198
+    unit_of_measurement: "ºC"
+    value_type: U_WORD
+    filters:
+      multiply: 0.1
+    accuracy_decimals: 1
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "DT Fan Regulation "
+    id: DeltaRegFan 
+    register_type: holding
+    address: 199
+    unit_of_measurement: "ºC"
+    value_type: U_WORD
+    filters:
+      multiply: 0.1
+    accuracy_decimals: 1
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Frost % "
+    id: FF_Real_Filter 
+    register_type: holding
+    address: 200
+    unit_of_measurement: "%"
+    value_type: U_WORD
+    filters:
+      multiply: 0.1
+    accuracy_decimals: 1
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Performance factor heating/cooling production in January"
+    id: PF_Jan 
+    register_type: holding
+    address: 211
+    unit_of_measurement: ""
+    value_type: U_WORD
+    filters:
+      multiply: 0.1
+    accuracy_decimals: 1
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Performance factor heating/cooling production in February"
+    id: PF_Feb 
+    register_type: holding
+    address: 212
+    unit_of_measurement: ""
+    value_type: U_WORD
+    filters:
+      multiply: 0.1
+    accuracy_decimals: 1
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Performance factor heating/cooling production in March"
+    id: PF_Mar 
+    register_type: holding
+    address: 213
+    unit_of_measurement: ""
+    value_type: U_WORD
+    filters:
+      multiply: 0.1
+    accuracy_decimals: 1
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Performance factor heating/cooling production in April"
+    id: PF_Apr 
+    register_type: holding
+    address: 214
+    unit_of_measurement: ""
+    value_type: U_WORD
+    filters:
+      multiply: 0.1
+    accuracy_decimals: 1
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Performance factor heating/cooling production in May"
+    id: PF_May 
+    register_type: holding
+    address: 215
+    unit_of_measurement: ""
+    value_type: U_WORD
+    filters:
+      multiply: 0.1
+    accuracy_decimals: 1
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Performance factor heating/cooling production in June"
+    id: PF_Jun 
+    register_type: holding
+    address: 216
+    unit_of_measurement: ""
+    value_type: U_WORD
+    filters:
+      multiply: 0.1
+    accuracy_decimals: 1
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Performance factor heating/cooling production in July"
+    id: PF_Jul 
+    register_type: holding
+    address: 217
+    unit_of_measurement: ""
+    value_type: U_WORD
+    filters:
+      multiply: 0.1
+    accuracy_decimals: 1
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Performance factor heating/cooling production in August"
+    id: PF_Aug 
+    register_type: holding
+    address: 218
+    unit_of_measurement: ""
+    value_type: U_WORD
+    filters:
+      multiply: 0.1
+    accuracy_decimals: 1
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Performance factor heating/cooling production in September"
+    id: PF_Sep 
+    register_type: holding
+    address: 219
+    unit_of_measurement: ""
+    value_type: U_WORD
+    filters:
+      multiply: 0.1
+    accuracy_decimals: 1
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Performance factor heating/cooling pro duction in October"
+    id: PF_Oct 
+    register_type: holding
+    address: 220
+    unit_of_measurement: ""
+    value_type: U_WORD
+    filters:
+      multiply: 0.1
+    accuracy_decimals: 1
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Performance factor heating/cooling production in November"
+    id: PF_Nov 
+    register_type: holding
+    address: 221
+    unit_of_measurement: ""
+    value_type: U_WORD
+    filters:
+      multiply: 0.1
+    accuracy_decimals: 1
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Performance factor heating/cooling production in December"
+    id: PF_Dec 
+    register_type: holding
+    address: 222
+    unit_of_measurement: ""
+    value_type: U_WORD
+    filters:
+      multiply: 0.1
+    accuracy_decimals: 1
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Current compressor reference "
+    id: REF 
+    register_type: holding
+    address: 223
+    unit_of_measurement: "%"
+    value_type: U_WORD
+    filters:
+      multiply: 0.1
+    accuracy_decimals: 1
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Monthly SPF "
+    id: SPF_MonthShow 
+    register_type: holding
+    address: 226
+    unit_of_measurement: ""
+    value_type: U_WORD
+    filters:
+      multiply: 0.1
+    accuracy_decimals: 1
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Year SPF "
+    id: SPF_YearShow 
+    register_type: holding
+    address: 227
+    unit_of_measurement: ""
+    value_type: U_WORD
+    filters:
+      multiply: 0.1
+    accuracy_decimals: 1
+ 
+#Intergers (may need an offset), whole numbers
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Compressor speed "
+    id: Speed 
+    register_type: holding
+    address: 5002
+    unit_of_measurement: "rpm"
+    value_type: U_WORD
+    filters:
+      multiply: 1
+    accuracy_decimals: 0
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Annual heating energy "
+    id: Qcond_YearShow 
+    register_type: holding
+    address: 5022
+    unit_of_measurement: "kWh/MWh"
+    value_type: U_WORD
+    filters:
+      multiply: 1
+    accuracy_decimals: 0
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Annual cooling energy "
+    id: Qevap_YearShow 
+    register_type: holding
+    address: 5023
+    unit_of_measurement: "kWh/MWh"
+    value_type: U_WORD
+    filters:
+      multiply: 1
+    accuracy_decimals: 0
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Annual electric energy "
+    id: Welec_YearShow 
+    register_type: holding
+    address: 5024
+    unit_of_measurement: "kWh/MWh"
+    value_type: U_WORD
+    filters:
+      multiply: 1
+    accuracy_decimals: 0
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Relative humidity of the inner zone 1 only if there is TH-Tune or THT"
+    id: RoomHumSG1 
+    register_type: holding
+    address: 5159
+    unit_of_measurement: "%"
+    value_type: U_WORD
+    filters:
+      multiply: 1
+    accuracy_decimals: 0
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Relative humidity of the inner zone 2 only if there is TH-Tune or THT"
+    id: RoomHumSG2 
+    register_type: holding
+    address: 5160
+    unit_of_measurement: "%"
+    value_type: U_WORD
+    filters:
+      multiply: 1
+    accuracy_decimals: 0
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Relative humidity of the inner zone 3 only if there is TH-Tune or THT"
+    id: RoomHumSG3 
+    register_type: holding
+    address: 5161
+    unit_of_measurement: "%"
+    value_type: U_WORD
+    filters:
+      multiply: 1
+    accuracy_decimals: 0
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "BUS DHW Demand "
+    id: DHW_BusDem 
+    register_type: holding
+    address: 5181
+    unit_of_measurement: ""
+    value_type: U_WORD
+    filters:
+      multiply: 1
+    accuracy_decimals: 0
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "BUS Pool Demand "
+    id: PoolBusDem 
+    register_type: holding
+    address: 5182
+    unit_of_measurement: ""
+    value_type: U_WORD
+    filters:
+      multiply: 1
+    accuracy_decimals: 0
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "BUS Shunt group SG1 (0=Nothing; 1=Heating; 2=Cooling)"
+    id: BusDemSG1 
+    register_type: holding
+    address: 5183
+    unit_of_measurement: ""
+    value_type: U_WORD
+    filters:
+      multiply: 1
+    accuracy_decimals: 0
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "BUS Shunt group SG2 (0=Nothing; 1=Heating; 2=Cooling)"
+    id: BusDemSG2 
+    register_type: holding
+    address: 5184
+    unit_of_measurement: ""
+    value_type: U_WORD
+    filters:
+      multiply: 1
+    accuracy_decimals: 0
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "BUS Shunt group SG3 (0=Nothing; 1=Heating; 2=Cooling)"
+    id: BusDemSG3 
+    register_type: holding
+    address: 5185
+    unit_of_measurement: ""
+    value_type: U_WORD
+    filters:
+      multiply: 1
+    accuracy_decimals: 0
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Heat Pump Program (0=Nothing; 1=Heating; 2=Cooling)"
+    id: Programa_BUS 
+    register_type: holding
+    address: 5188
+    unit_of_measurement: ""
+    value_type: U_WORD
+    filters:
+      multiply: 1
+    accuracy_decimals: 0
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Monthly Cooling Energy Production "
+    id: Qe_Jan 
+    register_type: holding
+    address: 5221
+    unit_of_measurement: "kWh / MWh"
+    value_type: U_WORD
+    filters:
+      multiply: 1
+    accuracy_decimals: 0
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Monthly Cooling Energy Production"
+    id: Qe_Feb 
+    register_type: holding
+    address: 5222
+    unit_of_measurement: "kWh / MWh"
+    value_type: U_WORD
+    filters:
+      multiply: 1
+    accuracy_decimals: 0
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Monthly Cooling Energy Production "
+    id: Qe_Mar 
+    register_type: holding
+    address: 5223
+    unit_of_measurement: "kWh / MWh"
+    value_type: U_WORD
+    filters:
+      multiply: 1
+    accuracy_decimals: 0
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Monthly Cooling Energy Production "
+    id: Qe_Apr 
+    register_type: holding
+    address: 5224
+    unit_of_measurement: "kWh / MWh"
+    value_type: U_WORD
+    filters:
+      multiply: 1
+    accuracy_decimals: 0
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Monthly Cooling Energy Production "
+    id: Qe_May 
+    register_type: holding
+    address: 5225
+    unit_of_measurement: "kWh / MWh"
+    value_type: U_WORD
+    filters:
+      multiply: 1
+    accuracy_decimals: 0
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Monthly Cooling Energy Production "
+    id: Qe_Jun 
+    register_type: holding
+    address: 5226
+    unit_of_measurement: "kWh / MWh"
+    value_type: U_WORD
+    filters:
+      multiply: 1
+    accuracy_decimals: 0
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Monthly Cooling Energy Production "
+    id: Qe_Jul 
+    register_type: holding
+    address: 5227
+    unit_of_measurement: "kWh / MWh"
+    value_type: U_WORD
+    filters:
+      multiply: 1
+    accuracy_decimals: 0
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Monthly Cooling Energy Production "
+    id: Qe_Aug 
+    register_type: holding
+    address: 5228
+    unit_of_measurement: "kWh / MWh"
+    value_type: U_WORD
+    filters:
+      multiply: 1
+    accuracy_decimals: 0
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Monthly Cooling Energy Production "
+    id: Qe_Sep 
+    register_type: holding
+    address: 5229
+    unit_of_measurement: "kWh / MWh"
+    value_type: U_WORD
+    filters:
+      multiply: 1
+    accuracy_decimals: 0
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Monthly Cooling Energy Production "
+    id: Qe_Oct 
+    register_type: holding
+    address: 5230
+    unit_of_measurement: "kWh / MWh"
+    value_type: U_WORD
+    filters:
+      multiply: 1
+    accuracy_decimals: 0
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Monthly Cooling Energy Production "
+    id: Qe_Nov 
+    register_type: holding
+    address: 5231
+    unit_of_measurement: "kWh / MWh"
+    value_type: U_WORD
+    filters:
+      multiply: 1
+    accuracy_decimals: 0
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Monthly Cooling Energy Production "
+    id: Qe_Dec 
+    register_type: holding
+    address: 5232
+    unit_of_measurement: "kWh / MWh"
+    value_type: U_WORD
+    filters:
+      multiply: 1
+    accuracy_decimals: 0
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Monthly Heating Energy production "
+    id: Qc_Jan 
+    register_type: holding
+    address: 5233
+    unit_of_measurement: "kWh / MWh"
+    value_type: U_WORD
+    filters:
+      multiply: 1
+    accuracy_decimals: 0
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Monthly Heating Energy production "
+    id: Qc_Feb 
+    register_type: holding
+    address: 5234
+    unit_of_measurement: "kWh / MWh"
+    value_type: U_WORD
+    filters:
+      multiply: 1
+    accuracy_decimals: 0
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Monthly Heating Energy production "
+    id: Qc_Mar 
+    register_type: holding
+    address: 5235
+    unit_of_measurement: "kWh / MWh"
+    value_type: U_WORD
+    filters:
+      multiply: 1
+    accuracy_decimals: 0
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Monthly Heating Energy production "
+    id: Qc_Apr 
+    register_type: holding
+    address: 5236
+    unit_of_measurement: "kWh / MWh"
+    value_type: U_WORD
+    filters:
+      multiply: 1
+    accuracy_decimals: 0
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Monthly Heating Energy production "
+    id: Qc_May 
+    register_type: holding
+    address: 5237
+    unit_of_measurement: "kWh / MWh"
+    value_type: U_WORD
+    filters:
+      multiply: 1
+    accuracy_decimals: 0
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Monthly Heating Energy production "
+    id: Qc_Jun 
+    register_type: holding
+    address: 5238
+    unit_of_measurement: "kWh / MWh"
+    value_type: U_WORD
+    filters:
+      multiply: 1
+    accuracy_decimals: 0
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Monthly Heating Energy production "
+    id: Qc_Jul 
+    register_type: holding
+    address: 5239
+    unit_of_measurement: "kWh / MWh"
+    value_type: U_WORD
+    filters:
+      multiply: 1
+    accuracy_decimals: 0
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Monthly Heating Energy production "
+    id: Qc_Aug 
+    register_type: holding
+    address: 5240
+    unit_of_measurement: "kWh / MWh"
+    value_type: U_WORD
+    filters:
+      multiply: 1
+    accuracy_decimals: 0
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Monthly Heating Energy production "
+    id: Qc_Sep 
+    register_type: holding
+    address: 5241
+    unit_of_measurement: "kWh / MWh"
+    value_type: U_WORD
+    filters:
+      multiply: 1
+    accuracy_decimals: 0
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Monthly Heating Energy production "
+    id: Qc_Oct 
+    register_type: holding
+    address: 5242
+    unit_of_measurement: "kWh / MWh"
+    value_type: U_WORD
+    filters:
+      multiply: 1
+    accuracy_decimals: 0
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Monthly Heating Energy production "
+    id: Qc_Nov 
+    register_type: holding
+    address: 5243
+    unit_of_measurement: "kWh / MWh"
+    value_type: U_WORD
+    filters:
+      multiply: 1
+    accuracy_decimals: 0
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Monthly Heating Energy production "
+    id: Qc_Dec 
+    register_type: holding
+    address: 5244
+    unit_of_measurement: "kWh / MWh"
+    value_type: U_WORD
+    filters:
+      multiply: 1
+    accuracy_decimals: 0
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Monthly Electric energy consumption "
+    id: We_Jan 
+    register_type: holding
+    address: 5245
+    unit_of_measurement: "kWh / MWh"
+    value_type: U_WORD
+    filters:
+      multiply: 1
+    accuracy_decimals: 0
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Monthly Electric energy consumption "
+    id: We_Feb 
+    register_type: holding
+    address: 5246
+    unit_of_measurement: "kWh / MWh"
+    value_type: U_WORD
+    filters:
+      multiply: 1
+    accuracy_decimals: 0
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Monthly Electric energy consumption "
+    id: We_Mar 
+    register_type: holding
+    address: 5247
+    unit_of_measurement: "kWh / MWh"
+    value_type: U_WORD
+    filters:
+      multiply: 1
+    accuracy_decimals: 0
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Monthly Electric energy consumption "
+    id: We_Apr 
+    register_type: holding
+    address: 5248
+    unit_of_measurement: "kWh / MWh"
+    value_type: U_WORD
+    filters:
+      multiply: 1
+    accuracy_decimals: 0
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Monthly Electric energy consumption "
+    id: We_May 
+    register_type: holding
+    address: 5249
+    unit_of_measurement: "kWh / MWh"
+    value_type: U_WORD
+    filters:
+      multiply: 1
+    accuracy_decimals: 0
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Monthly Electric energy consumption "
+    id: We_Jun 
+    register_type: holding
+    address: 5250
+    unit_of_measurement: "kWh / MWh"
+    value_type: U_WORD
+    filters:
+      multiply: 1
+    accuracy_decimals: 0
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Monthly Electric energy consumption "
+    id: We_Jul 
+    register_type: holding
+    address: 5251
+    unit_of_measurement: "kWh / MWh"
+    value_type: U_WORD
+    filters:
+      multiply: 1
+    accuracy_decimals: 0
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Monthly Electric energy consumption "
+    id: We_Aug 
+    register_type: holding
+    address: 5252
+    unit_of_measurement: "kWh / MWh"
+    value_type: U_WORD
+    filters:
+      multiply: 1
+    accuracy_decimals: 0
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Monthly Electric energy consumption "
+    id: We_Sep 
+    register_type: holding
+    address: 5253
+    unit_of_measurement: "kWh / MWh"
+    value_type: U_WORD
+    filters:
+      multiply: 1
+    accuracy_decimals: 0
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Monthly Electric energy consumption "
+    id: We_Oct 
+    register_type: holding
+    address: 5254
+    unit_of_measurement: "kWh / MWh"
+    value_type: U_WORD
+    filters:
+      multiply: 1
+    accuracy_decimals: 0
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Monthly Electric energy consumption "
+    id: We_Nov 
+    register_type: holding
+    address: 5255
+    unit_of_measurement: "kWh / MWh"
+    value_type: U_WORD
+    filters:
+      multiply: 1
+    accuracy_decimals: 0
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Monthly Electric energy consumption "
+    id: We_Dec 
+    register_type: holding
+    address: 5256
+    unit_of_measurement: "kWh / MWh"
+    value_type: U_WORD
+    filters:
+      multiply: 1
+    accuracy_decimals: 0
+ 
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Switch On the Heat Pump by BUS (1=Off; 2=On; 3=Emergency; 0=Keyboard)"
+    id: HeatpumpBusControl
+    register_type: holding
+    address: 5257
+    unit_of_measurement: ""
+    value_type: U_WORD
+    filters:
+      multiply: 1
+    accuracy_decimals: 0
+ 
+binary_sensor:
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "EVU signal state by Digital Input "
+    id: DI7 
+    register_type: coil
+    address: 1
+
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "State Selection Program Winter/Summer by digital input"
+    id: DI8 
+    register_type: coil
+    address: 2
+
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Activation Status DHW Production by digital input"
+    id: DI9 
+    register_type: coil
+    address: 3
+
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Activation Status Pool Production by digital input"
+    id: DI10 
+    register_type: coil
+    address: 4
+
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Status Heating Demand SG1 by digital input"
+    id: DI1 
+    register_type: coil
+    address: 5
+
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Status Cooling Demand SG1 by digital input"
+    id: DI2 
+    register_type: coil
+    address: 6
+
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Status Heating Demand SG2 by digital input"
+    id: DI3 
+    register_type: coil
+    address: 7
+
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Status Cooling Demand SG2 by digital input "
+    id: DI4 
+    register_type: coil
+    address: 8
+
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Status Heating Demand SG3 by digital input"
+    id: DI5 
+    register_type: coil
+    address: 9
+
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Status Cooling Demand SG3 by digital input"
+    id: DI6 
+    register_type: coil
+    address: 10
+
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Status Circulator Pump Hydraulic Kit "
+    id: Dout1 
+    register_type: coil
+    address: 21
+
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Activation Status Pool "
+    id: Dout2 
+    register_type: coil
+    address: 22
+
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Activation Status DHW "
+    id: Dout3 
+    register_type: coil
+    address: 23
+
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Activation Status DHW recirculation "
+    id: Dout4 
+    register_type: coil
+    address: 24
+
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Status Production Valve heating (0) or cooling (1)"
+    id: Dout5 
+    register_type: coil
+    address: 25
+
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Status Consumed Valve heating (0) or cooling (1)"
+    id: Dout6 
+    register_type: coil
+    address: 26
+
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Activation Status DG1 "
+    id: Dout7 
+    register_type: coil
+    address: 27
+
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Activation Status SG2 "
+    id: Dout8 
+    register_type: coil
+    address: 28
+
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Activation Status SG3 "
+    id: Dout9 
+    register_type: coil
+    address: 29
+
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Activation Status Auxiliary equipment cartridge/ electric heater buffer tank"
+    id: Dout10 
+    register_type: coil
+    address: 30
+
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Activation status Electric Heater DHW tank "
+    id: Dout11 
+    register_type: coil
+    address: 31
+
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Alarm signal state (0 no alarms) "
+    id: Dout12 
+    register_type: coil
+    address: 32
+
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Activation Status Fan "
+    id: Dout14 
+    register_type: coil
+    address: 33
+
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Activation Status Outdoor production pump"
+    id: Dout15 
+    register_type: coil
+    address: 34
+
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Status Cycle inversion valve "
+    id: Dout16 
+    register_type: coil
+    address: 35
+
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Status EVI valve "
+    id: Dout17 
+    register_type: coil
+    address: 36
+
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Status activation Electric Heater Tray Condensate"
+    id: Dout18 
+    register_type: coil
+    address: 37
+
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Switch On the Heat Pump by BUS "
+    id: BMS_OnOff 
+    register_type: coil
+    address: 180
+
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Heat pump Program Summer "
+    id: Summer
+    register_type: coil
+    address: 201
+
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Heat pump Program Winter "
+    id: Winter 
+    register_type: coil
+    address: 202
+
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Qcond_YearShow units 0 in KWh, 1 in MWh."
+    id: Qcond_Year_kWh_MWh
+    register_type: coil
+    address: 203
+
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Qevap_YearShow units 0 in KWh, 1 in MWh."
+    id: Qevap_Year_kWh_MWh
+    register_type: coil
+    address: 204
+
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Welec_YearShow units 0 in KWh, 1 in MWh."
+    id: Welec_Year_kWh_MWh
+    register_type: coil
+    address: 205
