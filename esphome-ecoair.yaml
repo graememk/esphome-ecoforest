@@ -54,7 +54,7 @@ sensor:
     register_type: holding
     address: 1
     unit_of_measurement: "ºC"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 0.1
     accuracy_decimals: 1
@@ -66,7 +66,7 @@ sensor:
     register_type: holding
     address: 2
     unit_of_measurement: "ºC"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 0.1
     accuracy_decimals: 1
@@ -78,7 +78,7 @@ sensor:
     register_type: holding
     address: 3
     unit_of_measurement: "bar"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 0.1
     accuracy_decimals: 1
@@ -90,7 +90,7 @@ sensor:
     register_type: holding
     address: 4
     unit_of_measurement: "ºC"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 0.1
     accuracy_decimals: 1
@@ -102,7 +102,7 @@ sensor:
     register_type: holding
     address: 5
     unit_of_measurement: "ºC"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 0.1
     accuracy_decimals: 1
@@ -114,7 +114,7 @@ sensor:
     register_type: holding
     address: 6
     unit_of_measurement: "bar"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 0.1
     accuracy_decimals: 1
@@ -126,7 +126,7 @@ sensor:
     register_type: holding
     address: 7
     unit_of_measurement: "bar"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 0.1
     accuracy_decimals: 1
@@ -138,7 +138,7 @@ sensor:
     register_type: holding
     address: 8
     unit_of_measurement: "ºC"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 0.1
     accuracy_decimals: 1
@@ -150,7 +150,7 @@ sensor:
     register_type: holding
     address: 9
     unit_of_measurement: "bar"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 0.1
     accuracy_decimals: 1
@@ -162,7 +162,7 @@ sensor:
     register_type: holding
     address: 10
     unit_of_measurement: "ºC"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 0.1
     accuracy_decimals: 1
@@ -174,7 +174,7 @@ sensor:
     register_type: holding
     address: 11
     unit_of_measurement: "ºC"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 0.1
     accuracy_decimals: 1
@@ -186,7 +186,7 @@ sensor:
     register_type: holding
     address: 12
     unit_of_measurement: "ºC"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 0.1
     accuracy_decimals: 1
@@ -198,7 +198,7 @@ sensor:
     register_type: holding
     address: 13
     unit_of_measurement: "ºC"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 0.1
     accuracy_decimals: 1
@@ -210,7 +210,7 @@ sensor:
     register_type: holding
     address: 14
     unit_of_measurement: "ºC"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 0.1
     accuracy_decimals: 1
@@ -222,7 +222,7 @@ sensor:
     register_type: holding
     address: 17
     unit_of_measurement: "ºC"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 0.1
     accuracy_decimals: 1
@@ -234,7 +234,7 @@ sensor:
     register_type: holding
     address: 18
     unit_of_measurement: "ºC"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 0.1
     accuracy_decimals: 1
@@ -246,7 +246,7 @@ sensor:
     register_type: holding
     address: 19
     unit_of_measurement: "ºC"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 0.1
     accuracy_decimals: 1
@@ -258,7 +258,7 @@ sensor:
     register_type: holding
     address: 20
     unit_of_measurement: "ºC"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 0.1
     accuracy_decimals: 1
@@ -270,7 +270,7 @@ sensor:
     register_type: holding
     address: 21
     unit_of_measurement: "ºC"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 0.1
     accuracy_decimals: 1
@@ -282,7 +282,7 @@ sensor:
     register_type: holding
     address: 23
     unit_of_measurement: "ºC"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 0.1
     accuracy_decimals: 1
@@ -294,7 +294,7 @@ sensor:
     register_type: holding
     address: 24
     unit_of_measurement: "ºC"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 0.1
     accuracy_decimals: 1
@@ -306,7 +306,7 @@ sensor:
     register_type: holding
     address: 25
     unit_of_measurement: "ºC"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 0.1
     accuracy_decimals: 1
@@ -318,7 +318,7 @@ sensor:
     register_type: holding
     address: 26
     unit_of_measurement: "ºC"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 0.1
     accuracy_decimals: 1
@@ -330,7 +330,7 @@ sensor:
     register_type: holding
     address: 27
     unit_of_measurement: "ºC"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 0.1
     accuracy_decimals: 1
@@ -342,7 +342,7 @@ sensor:
     register_type: holding
     address: 28
     unit_of_measurement: "%"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 0.1
     accuracy_decimals: 1
@@ -354,7 +354,7 @@ sensor:
     register_type: holding
     address: 29
     unit_of_measurement: "%"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 0.1
     accuracy_decimals: 1
@@ -366,7 +366,7 @@ sensor:
     register_type: holding
     address: 30
     unit_of_measurement: "%"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 0.1
     accuracy_decimals: 1
@@ -378,7 +378,7 @@ sensor:
     register_type: holding
     address: 31
     unit_of_measurement: "%"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 0.1
     accuracy_decimals: 1
@@ -390,7 +390,7 @@ sensor:
     register_type: holding
     address: 32
     unit_of_measurement: "%"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 0.1
     accuracy_decimals: 1
@@ -402,7 +402,7 @@ sensor:
     register_type: holding
     address: 33
     unit_of_measurement: "%"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 0.1
     accuracy_decimals: 1
@@ -414,7 +414,7 @@ sensor:
     register_type: holding
     address: 38
     unit_of_measurement: "ºC"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 0.1
     accuracy_decimals: 1
@@ -426,7 +426,7 @@ sensor:
     register_type: holding
     address: 123
     unit_of_measurement: "ºC"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 0.1
     accuracy_decimals: 1
@@ -438,7 +438,7 @@ sensor:
     register_type: holding
     address: 124
     unit_of_measurement: "ºC"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 0.1
     accuracy_decimals: 1
@@ -450,7 +450,7 @@ sensor:
     register_type: holding
     address: 125
     unit_of_measurement: "ºC"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 0.1
     accuracy_decimals: 1
@@ -462,7 +462,7 @@ sensor:
     register_type: holding
     address: 128
     unit_of_measurement: "ºC"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 0.1
     accuracy_decimals: 1
@@ -474,7 +474,7 @@ sensor:
     register_type: holding
     address: 129
     unit_of_measurement: "ºC"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 0.1
     accuracy_decimals: 1
@@ -486,7 +486,7 @@ sensor:
     register_type: holding
     address: 130
     unit_of_measurement: "ºC"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 0.1
     accuracy_decimals: 1
@@ -498,7 +498,7 @@ sensor:
     register_type: holding
     address: 133
     unit_of_measurement: "kW"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 0.1
     accuracy_decimals: 1
@@ -510,7 +510,7 @@ sensor:
     register_type: holding
     address: 134
     unit_of_measurement: "kW"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 0.1
     accuracy_decimals: 1
@@ -522,7 +522,7 @@ sensor:
     register_type: holding
     address: 135
     unit_of_measurement: "kW"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 0.1
     accuracy_decimals: 1
@@ -534,7 +534,7 @@ sensor:
     register_type: holding
     address: 136
     unit_of_measurement: " "
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 0.1
     accuracy_decimals: 1
@@ -546,7 +546,7 @@ sensor:
     register_type: holding
     address: 137
     unit_of_measurement: ""
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 0.1
     accuracy_decimals: 1
@@ -558,7 +558,7 @@ sensor:
     register_type: holding
     address: 142
     unit_of_measurement: "ºC"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 0.1
     accuracy_decimals: 1
@@ -570,7 +570,7 @@ sensor:
     register_type: holding
     address: 151
     unit_of_measurement: "ºC"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 0.1
     accuracy_decimals: 1
@@ -582,7 +582,7 @@ sensor:
     register_type: holding
     address: 152
     unit_of_measurement: "ºC"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 0.1
     accuracy_decimals: 1
@@ -594,7 +594,7 @@ sensor:
     register_type: holding
     address: 153
     unit_of_measurement: "ºC"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 0.1
     accuracy_decimals: 1
@@ -606,7 +606,7 @@ sensor:
     register_type: holding
     address: 161
     unit_of_measurement: "ºC"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 0.1
     accuracy_decimals: 1
@@ -618,7 +618,7 @@ sensor:
     register_type: holding
     address: 162
     unit_of_measurement: "ºC"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 0.1
     accuracy_decimals: 1
@@ -630,7 +630,7 @@ sensor:
     register_type: holding
     address: 163
     unit_of_measurement: "ºC"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 0.1
     accuracy_decimals: 1
@@ -642,7 +642,7 @@ sensor:
     register_type: holding
     address: 168
     unit_of_measurement: "ºC"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 0.1
     accuracy_decimals: 1
@@ -654,7 +654,7 @@ sensor:
     register_type: holding
     address: 169
     unit_of_measurement: "ºC"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 0.1
     accuracy_decimals: 1
@@ -666,7 +666,7 @@ sensor:
     register_type: holding
     address: 170
     unit_of_measurement: "ºC"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 0.1
     accuracy_decimals: 1
@@ -678,7 +678,7 @@ sensor:
     register_type: holding
     address: 171
     unit_of_measurement: "ºC"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 0.1
     accuracy_decimals: 1
@@ -690,7 +690,7 @@ sensor:
     register_type: holding
     address: 172
     unit_of_measurement: "ºC"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 0.1
     accuracy_decimals: 1
@@ -702,7 +702,7 @@ sensor:
     register_type: holding
     address: 175
     unit_of_measurement: "ºC"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 0.1
     accuracy_decimals: 1
@@ -714,7 +714,7 @@ sensor:
     register_type: holding
     address: 176
     unit_of_measurement: "ºC"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 0.1
     accuracy_decimals: 1
@@ -726,7 +726,7 @@ sensor:
     register_type: holding
     address: 177
     unit_of_measurement: "ºC"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 0.1
     accuracy_decimals: 1
@@ -738,7 +738,7 @@ sensor:
     register_type: holding
     address: 182
     unit_of_measurement: "%"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 0.1
     accuracy_decimals: 1
@@ -750,7 +750,7 @@ sensor:
     register_type: holding
     address: 197
     unit_of_measurement: "ºC"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 0.1
     accuracy_decimals: 1
@@ -762,7 +762,7 @@ sensor:
     register_type: holding
     address: 198
     unit_of_measurement: "ºC"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 0.1
     accuracy_decimals: 1
@@ -774,7 +774,7 @@ sensor:
     register_type: holding
     address: 199
     unit_of_measurement: "ºC"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 0.1
     accuracy_decimals: 1
@@ -786,7 +786,7 @@ sensor:
     register_type: holding
     address: 200
     unit_of_measurement: "%"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 0.1
     accuracy_decimals: 1
@@ -798,7 +798,7 @@ sensor:
     register_type: holding
     address: 211
     unit_of_measurement: ""
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 0.1
     accuracy_decimals: 1
@@ -810,7 +810,7 @@ sensor:
     register_type: holding
     address: 212
     unit_of_measurement: ""
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 0.1
     accuracy_decimals: 1
@@ -822,7 +822,7 @@ sensor:
     register_type: holding
     address: 213
     unit_of_measurement: ""
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 0.1
     accuracy_decimals: 1
@@ -834,7 +834,7 @@ sensor:
     register_type: holding
     address: 214
     unit_of_measurement: ""
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 0.1
     accuracy_decimals: 1
@@ -846,7 +846,7 @@ sensor:
     register_type: holding
     address: 215
     unit_of_measurement: ""
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 0.1
     accuracy_decimals: 1
@@ -858,7 +858,7 @@ sensor:
     register_type: holding
     address: 216
     unit_of_measurement: ""
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 0.1
     accuracy_decimals: 1
@@ -870,7 +870,7 @@ sensor:
     register_type: holding
     address: 217
     unit_of_measurement: ""
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 0.1
     accuracy_decimals: 1
@@ -882,7 +882,7 @@ sensor:
     register_type: holding
     address: 218
     unit_of_measurement: ""
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 0.1
     accuracy_decimals: 1
@@ -894,7 +894,7 @@ sensor:
     register_type: holding
     address: 219
     unit_of_measurement: ""
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 0.1
     accuracy_decimals: 1
@@ -906,7 +906,7 @@ sensor:
     register_type: holding
     address: 220
     unit_of_measurement: ""
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 0.1
     accuracy_decimals: 1
@@ -918,7 +918,7 @@ sensor:
     register_type: holding
     address: 221
     unit_of_measurement: ""
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 0.1
     accuracy_decimals: 1
@@ -930,7 +930,7 @@ sensor:
     register_type: holding
     address: 222
     unit_of_measurement: ""
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 0.1
     accuracy_decimals: 1
@@ -942,7 +942,7 @@ sensor:
     register_type: holding
     address: 223
     unit_of_measurement: "%"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 0.1
     accuracy_decimals: 1
@@ -954,7 +954,7 @@ sensor:
     register_type: holding
     address: 226
     unit_of_measurement: ""
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 0.1
     accuracy_decimals: 1
@@ -966,7 +966,7 @@ sensor:
     register_type: holding
     address: 227
     unit_of_measurement: ""
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 0.1
     accuracy_decimals: 1
@@ -979,7 +979,7 @@ sensor:
     register_type: holding
     address: 5002
     unit_of_measurement: "rpm"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 1
     accuracy_decimals: 0
@@ -991,7 +991,7 @@ sensor:
     register_type: holding
     address: 5022
     unit_of_measurement: "kWh/MWh"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 1
     accuracy_decimals: 0
@@ -1003,7 +1003,7 @@ sensor:
     register_type: holding
     address: 5023
     unit_of_measurement: "kWh/MWh"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 1
     accuracy_decimals: 0
@@ -1015,7 +1015,7 @@ sensor:
     register_type: holding
     address: 5024
     unit_of_measurement: "kWh/MWh"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 1
     accuracy_decimals: 0
@@ -1027,7 +1027,7 @@ sensor:
     register_type: holding
     address: 5159
     unit_of_measurement: "%"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 1
     accuracy_decimals: 0
@@ -1039,7 +1039,7 @@ sensor:
     register_type: holding
     address: 5160
     unit_of_measurement: "%"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 1
     accuracy_decimals: 0
@@ -1051,7 +1051,7 @@ sensor:
     register_type: holding
     address: 5161
     unit_of_measurement: "%"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 1
     accuracy_decimals: 0
@@ -1063,7 +1063,7 @@ sensor:
     register_type: holding
     address: 5181
     unit_of_measurement: ""
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 1
     accuracy_decimals: 0
@@ -1075,7 +1075,7 @@ sensor:
     register_type: holding
     address: 5182
     unit_of_measurement: ""
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 1
     accuracy_decimals: 0
@@ -1087,7 +1087,7 @@ sensor:
     register_type: holding
     address: 5183
     unit_of_measurement: ""
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 1
     accuracy_decimals: 0
@@ -1099,7 +1099,7 @@ sensor:
     register_type: holding
     address: 5184
     unit_of_measurement: ""
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 1
     accuracy_decimals: 0
@@ -1111,7 +1111,7 @@ sensor:
     register_type: holding
     address: 5185
     unit_of_measurement: ""
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 1
     accuracy_decimals: 0
@@ -1123,7 +1123,7 @@ sensor:
     register_type: holding
     address: 5188
     unit_of_measurement: ""
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 1
     accuracy_decimals: 0
@@ -1135,7 +1135,7 @@ sensor:
     register_type: holding
     address: 5221
     unit_of_measurement: "kWh / MWh"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 1
     accuracy_decimals: 0
@@ -1147,7 +1147,7 @@ sensor:
     register_type: holding
     address: 5222
     unit_of_measurement: "kWh / MWh"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 1
     accuracy_decimals: 0
@@ -1159,7 +1159,7 @@ sensor:
     register_type: holding
     address: 5223
     unit_of_measurement: "kWh / MWh"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 1
     accuracy_decimals: 0
@@ -1171,7 +1171,7 @@ sensor:
     register_type: holding
     address: 5224
     unit_of_measurement: "kWh / MWh"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 1
     accuracy_decimals: 0
@@ -1183,7 +1183,7 @@ sensor:
     register_type: holding
     address: 5225
     unit_of_measurement: "kWh / MWh"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 1
     accuracy_decimals: 0
@@ -1195,7 +1195,7 @@ sensor:
     register_type: holding
     address: 5226
     unit_of_measurement: "kWh / MWh"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 1
     accuracy_decimals: 0
@@ -1207,7 +1207,7 @@ sensor:
     register_type: holding
     address: 5227
     unit_of_measurement: "kWh / MWh"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 1
     accuracy_decimals: 0
@@ -1219,7 +1219,7 @@ sensor:
     register_type: holding
     address: 5228
     unit_of_measurement: "kWh / MWh"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 1
     accuracy_decimals: 0
@@ -1231,7 +1231,7 @@ sensor:
     register_type: holding
     address: 5229
     unit_of_measurement: "kWh / MWh"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 1
     accuracy_decimals: 0
@@ -1243,7 +1243,7 @@ sensor:
     register_type: holding
     address: 5230
     unit_of_measurement: "kWh / MWh"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 1
     accuracy_decimals: 0
@@ -1255,7 +1255,7 @@ sensor:
     register_type: holding
     address: 5231
     unit_of_measurement: "kWh / MWh"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 1
     accuracy_decimals: 0
@@ -1267,7 +1267,7 @@ sensor:
     register_type: holding
     address: 5232
     unit_of_measurement: "kWh / MWh"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 1
     accuracy_decimals: 0
@@ -1279,7 +1279,7 @@ sensor:
     register_type: holding
     address: 5233
     unit_of_measurement: "kWh / MWh"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 1
     accuracy_decimals: 0
@@ -1291,7 +1291,7 @@ sensor:
     register_type: holding
     address: 5234
     unit_of_measurement: "kWh / MWh"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 1
     accuracy_decimals: 0
@@ -1303,7 +1303,7 @@ sensor:
     register_type: holding
     address: 5235
     unit_of_measurement: "kWh / MWh"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 1
     accuracy_decimals: 0
@@ -1315,7 +1315,7 @@ sensor:
     register_type: holding
     address: 5236
     unit_of_measurement: "kWh / MWh"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 1
     accuracy_decimals: 0
@@ -1327,7 +1327,7 @@ sensor:
     register_type: holding
     address: 5237
     unit_of_measurement: "kWh / MWh"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 1
     accuracy_decimals: 0
@@ -1339,7 +1339,7 @@ sensor:
     register_type: holding
     address: 5238
     unit_of_measurement: "kWh / MWh"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 1
     accuracy_decimals: 0
@@ -1351,7 +1351,7 @@ sensor:
     register_type: holding
     address: 5239
     unit_of_measurement: "kWh / MWh"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 1
     accuracy_decimals: 0
@@ -1363,7 +1363,7 @@ sensor:
     register_type: holding
     address: 5240
     unit_of_measurement: "kWh / MWh"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 1
     accuracy_decimals: 0
@@ -1375,7 +1375,7 @@ sensor:
     register_type: holding
     address: 5241
     unit_of_measurement: "kWh / MWh"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 1
     accuracy_decimals: 0
@@ -1387,7 +1387,7 @@ sensor:
     register_type: holding
     address: 5242
     unit_of_measurement: "kWh / MWh"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 1
     accuracy_decimals: 0
@@ -1399,7 +1399,7 @@ sensor:
     register_type: holding
     address: 5243
     unit_of_measurement: "kWh / MWh"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 1
     accuracy_decimals: 0
@@ -1411,7 +1411,7 @@ sensor:
     register_type: holding
     address: 5244
     unit_of_measurement: "kWh / MWh"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 1
     accuracy_decimals: 0
@@ -1423,7 +1423,7 @@ sensor:
     register_type: holding
     address: 5245
     unit_of_measurement: "kWh / MWh"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 1
     accuracy_decimals: 0
@@ -1435,7 +1435,7 @@ sensor:
     register_type: holding
     address: 5246
     unit_of_measurement: "kWh / MWh"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 1
     accuracy_decimals: 0
@@ -1447,7 +1447,7 @@ sensor:
     register_type: holding
     address: 5247
     unit_of_measurement: "kWh / MWh"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 1
     accuracy_decimals: 0
@@ -1459,7 +1459,7 @@ sensor:
     register_type: holding
     address: 5248
     unit_of_measurement: "kWh / MWh"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 1
     accuracy_decimals: 0
@@ -1471,7 +1471,7 @@ sensor:
     register_type: holding
     address: 5249
     unit_of_measurement: "kWh / MWh"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 1
     accuracy_decimals: 0
@@ -1483,7 +1483,7 @@ sensor:
     register_type: holding
     address: 5250
     unit_of_measurement: "kWh / MWh"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 1
     accuracy_decimals: 0
@@ -1495,7 +1495,7 @@ sensor:
     register_type: holding
     address: 5251
     unit_of_measurement: "kWh / MWh"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 1
     accuracy_decimals: 0
@@ -1507,7 +1507,7 @@ sensor:
     register_type: holding
     address: 5252
     unit_of_measurement: "kWh / MWh"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 1
     accuracy_decimals: 0
@@ -1519,7 +1519,7 @@ sensor:
     register_type: holding
     address: 5253
     unit_of_measurement: "kWh / MWh"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 1
     accuracy_decimals: 0
@@ -1531,7 +1531,7 @@ sensor:
     register_type: holding
     address: 5254
     unit_of_measurement: "kWh / MWh"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 1
     accuracy_decimals: 0
@@ -1543,7 +1543,7 @@ sensor:
     register_type: holding
     address: 5255
     unit_of_measurement: "kWh / MWh"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 1
     accuracy_decimals: 0
@@ -1555,7 +1555,7 @@ sensor:
     register_type: holding
     address: 5256
     unit_of_measurement: "kWh / MWh"
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 1
     accuracy_decimals: 0
@@ -1567,7 +1567,7 @@ sensor:
     register_type: holding
     address: 5257
     unit_of_measurement: ""
-    value_type: U_WORD
+    value_type: S_WORD
     filters:
       multiply: 1
     accuracy_decimals: 0
@@ -1803,3 +1803,40 @@ binary_sensor:
     id: Welec_Year_kWh_MWh
     register_type: coil
     address: 205
+
+number:
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "Switch On the Heat Pump by BUS (1=Off; 2=On; 3=Emergency; 0=Keyboard)"
+    id: HeatpumpBusControlWrite
+    register_type: holding
+    address: 5257
+    unit_of_measurement: ""
+    value_type: S_WORD
+    min_value: 0
+    max_value: 3
+    step: 1
+
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "BUS Shunt group SG1 (0=Nothing; 1=Heating; 2=Cooling)"
+    id: BusDemSG1Write
+    register_type: holding
+    address: 5183
+    unit_of_measurement: ""
+    value_type: S_WORD
+    min_value: 0
+    max_value: 2
+    step: 1
+
+  - platform: modbus_controller
+    modbus_controller_id: ecoModbus
+    name: "BUS Heating SG1 Setpoint "
+    id: BusHeatDemandSetP_SG1Write 
+    register_type: holding
+    address: 170
+    unit_of_measurement: "ºC"
+    value_type: S_WORD
+    #multiply: 0.1
+    min_value: 0
+    max_value: 600
