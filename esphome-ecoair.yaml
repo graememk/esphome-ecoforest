@@ -1837,6 +1837,9 @@ number:
     address: 170
     unit_of_measurement: "ºC"
     value_type: S_WORD
+    lambda: "return  x * 0.1; "
+    write_lambda: "return  x * 10.0; "
     #multiply: 0.1
     min_value: 0
+    max_value: 60
     max_value: 600
